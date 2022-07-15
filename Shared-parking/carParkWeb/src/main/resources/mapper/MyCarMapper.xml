@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.park.mapper.MyCarMapper">
+    <!--新增-->
+    <insert id="insertCar">
+        insert into mycar
+            (uid,name,brand,license,color)
+        values
+        (#{uid},#{name},#{brand},#{license},#{color})
+    </insert>
+
+    <select id="queryCarByUid" resultType="com.park.pojo.MyCar">
+        select id,uid,name,brand,license,color from mycar where uid=#{uid}
+    </select>
+</mapper>
